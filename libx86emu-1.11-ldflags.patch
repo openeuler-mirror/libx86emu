@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-11-16 15:00:14.579051907 +0100
++++ Makefile	2017-11-16 15:00:31.728134481 +0100
+@@ -45,7 +45,7 @@
+ 	install -m 644 -D include/x86emu.h $(DESTDIR)/usr/include/x86emu.h
+ 
+ $(LIB_NAME): .depend $(OBJS)
+-	$(CC) -shared -Wl,-soname,$(LIB_SONAME) $(OBJS) -o $(LIB_NAME)
++	$(CC) -shared -Wl,-soname,$(LIB_SONAME) $(LDFLAGS) $(OBJS) -o $(LIB_NAME)
+ 
+ test:
+ 	make -C test
