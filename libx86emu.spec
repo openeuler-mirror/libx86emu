@@ -7,8 +7,8 @@
         LDFLAGS="-fPIC %{__global_ldflags}"
 
 Name:           libx86emu
-Version:        3.1
-Release:        2
+Version:        3.5
+Release:        1
 Summary:        x86 emulation library
 License:        BSD
 URL:            https://github.com/wfeldt/libx86emu
@@ -16,12 +16,13 @@ Source0:        https://github.com/wfeldt/libx86emu/archive/%{version}/%{name}-%
 BuildRequires:  gcc
 
 %description
-libx86emu is a small library to emulate x86 instructions. 
-The focus here is not a complete emulation (go for qemu for this) 
-but to cover enough for typical firmware blobs.
+Small x86 emulation library with focus of easy usage and extended execution
+logging functions. The library features an API to create emulation objects
+for x86 architecture.
 
 %package        devel
 Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description    devel
 The %{name}-devel package contains development files for %{name}.
@@ -32,7 +33,8 @@ The %{name}-devel package contains development files for %{name}.
 %build
 %make_build %{make_flags} shared
 
-%ldconfig_scriptlets
+%post -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %install
 %make_install %{make_flags}
@@ -49,6 +51,9 @@ The %{name}-devel package contains development files for %{name}.
 %{_libdir}/libx86emu.so
 
 %changelog
+* Fri Mar 25 2022 liukuo <liukuo@kylinos.cn> - 3.5-1
+- Update version to v3.5
+
 * Fri Nov 5 2020 xingxing <xingxing9@huawei.com> - 3.1-2
 - ID:NA
 - SUG:NA
