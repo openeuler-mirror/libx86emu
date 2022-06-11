@@ -8,13 +8,12 @@
 
 Name:           libx86emu
 Version:        3.1
-Release:        1
+Release:        2
 Summary:        x86 emulation library
 License:        BSD
 URL:            https://github.com/wfeldt/libx86emu
 Source0:        https://github.com/wfeldt/libx86emu/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  gcc
-BuildRequires:  libx86emu
 
 %description
 libx86emu is a small library to emulate x86 instructions. 
@@ -38,7 +37,6 @@ The %{name}-devel package contains development files for %{name}.
 
 %install
 %make_install %{make_flags}
-cp %{_libdir}/libx86emu.so.1* %{buildroot}%{_libdir}/
 
 %files
 %defattr(-,root,root)
@@ -52,6 +50,9 @@ cp %{_libdir}/libx86emu.so.1* %{buildroot}%{_libdir}/
 %{_libdir}/libx86emu.so
 
 %changelog
+* Sat Jun 11 2022 hanhui <hanhui15@h-partners.com> 3.1-2
+- DESC:remove libx86emu.so.1*
+
 * Wed Aug 19 2020 zhanzhimin <zhanzhimin@huawei.com> - 3.1-1
 - Type:enhancement
 - ID:NA
