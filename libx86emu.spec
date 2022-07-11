@@ -8,7 +8,7 @@
 
 Name:           libx86emu
 Version:        3.1
-Release:        2
+Release:        3
 Summary:        x86 emulation library
 License:        BSD
 URL:            https://github.com/wfeldt/libx86emu
@@ -22,6 +22,7 @@ but to cover enough for typical firmware blobs.
 
 %package        devel
 Summary:        Development files for %{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description    devel
 The %{name}-devel package contains development files for %{name}.
@@ -49,7 +50,10 @@ The %{name}-devel package contains development files for %{name}.
 %{_libdir}/libx86emu.so
 
 %changelog
-* Fri Nov 5 2020 xingxing <xingxing9@huawei.com> - 3.1-2
+* Mon Jul 11 2022 wangkerong <wangkerong@h-partners.com> - 3.1-3
+- add missig requires
+
+* Fri Nov 5 2021 xingxing <xingxing9@huawei.com> - 3.1-2
 - ID:NA
 - SUG:NA
 - DESC:delete low version  
