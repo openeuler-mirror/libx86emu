@@ -54,7 +54,7 @@ The %{name}-devel package contains development files for %{name}.
 * Fri Mar 25 2022 liukuo <liukuo@kylinos.cn> - 3.5-1
 - Update version to v3.5
 
-* Fri Nov 5 2020 xingxing <xingxing9@huawei.com> - 3.1-2
+* Fri Nov 5 2021 xingxing <xingxing9@huawei.com> - 3.1-2
 - ID:NA
 - SUG:NA
 - DESC:delete low version  
