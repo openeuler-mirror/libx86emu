@@ -1,0 +1,11 @@
+--- a/Makefile	2021-11-19 01:14:15.000000000 +0800
++++ b/Makefile	2023-04-19 16:29:15.349812381 +0800
+@@ -11,7 +11,7 @@
+ 
+ MAJOR_VERSION := $(shell $(GIT2LOG) --version VERSION ; cut -d . -f 1 VERSION)
+ 
+-CC	= gcc
++CC	?= gcc
+ CFLAGS	= -g -O2 -fPIC -fvisibility=hidden -fomit-frame-pointer -Wall
+ LDFLAGS =
+ 
