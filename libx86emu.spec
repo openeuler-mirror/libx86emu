@@ -8,11 +8,12 @@
 
 Name:           libx86emu
 Version:        3.5
-Release:        1
+Release:        2
 Summary:        x86 emulation library
 License:        BSD
 URL:            https://github.com/wfeldt/libx86emu
 Source0:        https://github.com/wfeldt/libx86emu/archive/%{version}/%{name}-%{version}.tar.gz
+Patch0:         libx86emu-fix-cc.patch
 BuildRequires:  gcc
 
 %description
@@ -51,6 +52,9 @@ The %{name}-devel package contains development files for %{name}.
 %{_libdir}/libx86emu.so
 
 %changelog
+* Wed Apr 19 2023 Xiaoya Huang <huangxiaoya@iscas.ac.cn> - 3.5-2
+- Fix CC compiler support
+
 * Fri Mar 25 2022 liukuo <liukuo@kylinos.cn> - 3.5-1
 - Update version to v3.5
 
